@@ -55,7 +55,8 @@ public class WalletConnectModal {
         sessionParams: SessionParams = .default,
         recommendedWalletIds: [String] = [],
         excludedWalletIds: [String] = [],
-        accentColor: Color? = nil
+        accentColor: Color? = nil,
+        modalTopBackground: Color? = nil
     ) {
         Pair.configure(metadata: metadata)
         WalletConnectModal.config = WalletConnectModal.Config(
@@ -68,6 +69,10 @@ public class WalletConnectModal {
         
         if let accentColor {
             Color.accent = accentColor
+        }
+
+        if let modalTopBackground {
+            Color.modalTopBackground = modalTopBackground
         }
     }
     
