@@ -31,6 +31,7 @@ extension Color {
     static let thickOverlay = Color(AssetColor.thickOverlay)
     static let thinOverlay = Color(AssetColor.thinOverlay)
     static var accent = Color(AssetColor.accent)
+    static var modalTopBackground = Color(AssetColor.accent)
 }
 
 #if canImport(UIKit)

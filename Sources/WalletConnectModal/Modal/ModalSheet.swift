@@ -22,7 +22,7 @@ public struct ModalSheet: View {
         .edgesIgnoringSafeArea(.bottom)
         .background(
             VStack(spacing: 0) {
-                Color.accent
+                Color.modalTopBackground
                     .frame(height: 90)
                     .cornerRadius(8, corners: [[.topLeft, .topRight]])
                 Color.background1
@@ -66,9 +66,9 @@ public struct ModalSheet: View {
             Spacer()
             
             switch viewModel.destination {
-            case .welcome:
-                qrButton()
-            case .qr, .walletDetail:
+//            case .welcome:
+//                qrButton()
+            case /*.qr, */.walletDetail:
                 copyButton()
             default:
                 EmptyView()
@@ -144,9 +144,9 @@ public struct ModalSheet: View {
         case .welcome,
              .viewAll:
             welcome()
-        case .qr:
-            qrCode()
-                .padding(.bottom, 20)
+//        case .qr:
+//            qrCode()
+//                .padding(.bottom, 20)
         case .getWallet:
             GetAWalletView(
                 wallets: Array(viewModel.wallets.prefix(6)),
@@ -189,16 +189,16 @@ extension ModalSheet {
         }
     }
     
-    private func qrButton() -> some View {
-        Button {
-            withAnimation {
-                viewModel.navigateTo(.qr)
-            }
-        } label: {
-            Image(.qr_large)
-                .padding()
-        }
-    }
+//    private func qrButton() -> some View {
+//        Button {
+//            withAnimation {
+//                viewModel.navigateTo(.qr)
+//            }
+//        } label: {
+//            Image(.qr_large)
+//                .padding()
+//        }
+//    }
     
     private func copyButton() -> some View {
         Button {
